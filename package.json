@@ -20,6 +20,8 @@
   "homepage": "https://github.com/tuominentj/YAUTE-robot#readme",
   "dependencies": {
     "aedes": "^0.40.1",
+    "axios": "^0.19.2",
+    "mqtt": "^3.0.0",
     "websocket-stream": "^5.5.2"
   }
 }

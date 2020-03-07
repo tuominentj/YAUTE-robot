@@ -23,17 +23,21 @@ const main_loop = () => {
                 let data = {
                     time: time_stamp,
                     joints: joints
-                }
-
-                mqtt_client.publish('joints', JSON.stringsfy(data));
+                };
+                
+                //mqtt_client.publish('joints', JSON.stringsfy(data));
+                mqtt_client.publish('joints', JSON.stringify(data));
                 console.log(start_time_stamp, joints, delta, 'ms');
                 main_loop();
             });
     }, 10);
 }
 
+
+main_loop();
+
 const mqtt_client = mqtt.connect('wss://mqtt-broker-tt.herokuapp.com');
 mqtt_client.on('connect', () => {
-    console.log('connected to mqtt broker');
-    main_loop();
+console.log('connected to mqtt broker');
+main_loop();
 });
