@@ -25,7 +25,6 @@ const main_loop = () => {
                     joints: joints
                 };
                 
-                //mqtt_client.publish('joints', JSON.stringsfy(data));
                 mqtt_client.publish('joints', JSON.stringify(data));
                 console.log(start_time_stamp, joints, delta, 'ms');
                 main_loop();
